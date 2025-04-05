@@ -90,10 +90,12 @@ const addCopyButtons = () => {
     if (codeBlock.parentNode.querySelector('.copy-button')) return;
     
     const copyButton = document.createElement('button');
-    copyButton.className = 'copy-button absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white text-sm px-2 py-1 rounded opacity-80 hover:opacity-100 transition-opacity';
+    copyButton.className = 'copy-button';
     copyButton.innerHTML = '复制';
     
-    copyButton.addEventListener('click', () => {
+    copyButton.addEventListener('click', (e) => {
+      e.stopPropagation(); // 阻止冒泡，避免触发其他事件
+      
       const code = codeBlock.textContent;
       navigator.clipboard.writeText(code).then(() => {
         copyButton.innerHTML = '已复制!';
@@ -109,9 +111,21 @@ const addCopyButtons = () => {
       });
     });
     
-    // Make the pre position relative for absolute positioning of the button
-    codeBlock.parentNode.style.position = 'relative';
-    codeBlock.parentNode.appendChild(copyButton);
+    // 确保pre标签有正确的样式以支持绝对定位
+    const preElement = codeBlock.parentNode;
+    preElement.style.position = 'relative';
+    preElement.style.overflow = 'auto';
+    
+    // 将按钮添加到pre标签内，确保其绝对定位正确
+    preElement.appendChild(copyButton);
+    
+    // 在移动端添加特殊处理
+    if (window.innerWidth <= 768) {
+      // 确保代码块有足够空间放置按钮
+      preElement.style.paddingTop = '35px';
+    } else {
+      preElement.style.paddingTop = '30px';
+    }
   });
 };
 
@@ -121,6 +135,25 @@ if (document.readyState === 'loading') {
 } else {
   addCopyButtons();
 }
+
+// 处理窗口大小变化
+window.addEventListener('resize', function() {
+  const preElements = document.querySelectorAll('pre');
+  
+  preElements.forEach(pre => {
+    if (window.innerWidth <= 768) {
+      // 移动端模式
+      pre.style.paddingTop = '35px';
+      pre.style.whiteSpace = 'pre-wrap';
+      pre.style.wordWrap = 'break-word';
+    } else {
+      // 桌面端模式
+      pre.style.paddingTop = '30px';
+      pre.style.whiteSpace = 'pre';
+      pre.style.wordWrap = 'normal';
+    }
+  });
+});
 
 // Prevent zooming
 window.addEventListener("wheel", (e)=> {
@@ -616,13 +649,27 @@ document.addEventListener('DOMContentLoaded', function() {
   if (isMobile) {
     // 移动端默认收起
     isTocCollapsed = true;
+    // 立即设置状态，避免延迟导致闪烁
+    tocContent.classList.add('collapsed');
+    tocContent.classList.remove('expanded');
+    collapseText.classList.add('hidden');
+    expandText.classList.remove('hidden');
+    collapseIcon.classList.add('hidden');
+    expandIcon.classList.remove('hidden');
   } else if (localStorage.getItem('tocCollapsed') === null) {
     // 桌面端首次访问，默认展开
     isTocCollapsed = false;
+    // 立即设置状态，避免延迟导致闪烁
+    tocContent.classList.remove('collapsed');
+    tocContent.classList.add('expanded');
+    collapseText.classList.remove('hidden');
+    expandText.classList.add('hidden');
+    collapseIcon.classList.remove('hidden');
+    expandIcon.classList.add('hidden');
+  } else {
+    // 应用保存的状态
+    updateTocState(isTocCollapsed);
   }
-  
-  // 应用初始状态
-  updateTocState(isTocCollapsed);
   
   // 目录按钮点击事件
   tocToggle.addEventListener('click', function() {
@@ -642,6 +689,12 @@ document.addEventListener('DOMContentLoaded', function() {
       // 如果用户没有明确设置状态，则桌面端默认展开
       if (localStorage.getItem('tocCollapsed') === null) {
         isTocCollapsed = false;
+        updateTocState(isTocCollapsed);
+      }
+    } else if (!isMobile && currentIsMobile) {
+      // 当视口大小从桌面端切换到移动端时，且用户没有明确设置状态
+      if (localStorage.getItem('tocCollapsed') === null) {
+        isTocCollapsed = true;
         updateTocState(isTocCollapsed);
       }
     }

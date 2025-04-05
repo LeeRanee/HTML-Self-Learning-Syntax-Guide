@@ -14,6 +14,8 @@ body {
   display: flex;
   flex: 1;
   position: relative;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* 侧边栏样式 */
@@ -55,21 +57,35 @@ body {
   flex: 1;
   margin-left: 0; /* 默认侧边栏隐藏时无需预留空间 */
   transition: margin 0.3s ease;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* 当侧边栏显示且未折叠时，为内容预留空间 */
-.sidebar.active:not(.collapsed) ~ .content-wrapper {
-  margin-left: 260px;
-}
-
-/* 当侧边栏显示且折叠时，为内容预留较小空间 */
-.sidebar.active.collapsed ~ .content-wrapper {
-  margin-left: 60px;
+@media (min-width: 769px) {
+  .sidebar.active:not(.collapsed) ~ .content-wrapper {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+  }
+  
+  .sidebar.active.collapsed ~ .content-wrapper {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+  }
 }
 
 @media (max-width: 768px) {
   .content-wrapper {
     margin-left: 0 !important; /* 小屏幕下内容始终占满宽度 */
+    width: 100% !important;
+  }
+  
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 
@@ -207,10 +223,32 @@ pre {
   font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'Liberation Mono', Menlo, Courier, monospace;
   font-size: 14px;
   line-height: 1.4;
+  position: relative; /* 确保复制按钮能够正确定位 */
 }
 
 code {
   font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+/* 代码块复制按钮样式 */
+.copy-button {
+  position: absolute !important; /* 改为绝对定位确保精确位置 */
+  top: 4px;
+  right: 4px;
+  background-color: rgba(50, 50, 50, 0.8);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s;
+  float: none; /* 移除浮动 */
+}
+
+.copy-button:hover {
+  background-color: rgba(70, 70, 70, 0.9);
 }
 
 /* Fine tune spacing */
@@ -371,6 +409,8 @@ html {
   padding: 5px;
   border-radius: 4px;
   transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
 }
 
 .toc-toggle:hover {
@@ -381,6 +421,7 @@ html {
   max-height: 1000px; /* 足够大的高度以容纳所有内容 */
   opacity: 1;
   transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+  width: 100%;
 }
 
 .toc-content.collapsed {
@@ -392,15 +433,22 @@ html {
 }
 
 @media (max-width: 768px) {
+  /* 移动端目录设置 */
+  #toc {
+    padding: 15px;
+  }
+  
   .toc-content {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
+    margin-top: 0;
   }
   
   .toc-content.expanded {
     max-height: 1000px;
     opacity: 1;
+    margin-top: 10px;
   }
   
   .toc-toggle .collapse-text,
@@ -411,6 +459,64 @@ html {
   .toc-toggle .expand-text,
   .toc-toggle .expand-icon {
     display: block;
+  }
+  
+  /* 移动端目录布局 */
+  .toc-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .toc-content > div {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  pre {
+    white-space: pre-wrap !important; /* 移动端强制换行 */
+    word-wrap: break-word !important;
+    font-size: 13px; /* 稍微减小字体大小 */
+    padding-top: 35px !important; /* 确保有足够空间放置按钮 */
+  }
+  
+  .copy-button {
+    top: 4px;
+    right: 4px;
+    padding: 3px 6px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 640px) {
+  .floating-button-container {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .floating-button {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .floating-button svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .menu-item {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  
+  .menu-item svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .floating-menu {
+    min-width: 110px;
+    padding: 10px;
+    gap: 10px;
   }
 }
 

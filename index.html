@@ -1,0 +1,2679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>HTML语法大全 - 零基础详解</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <!-- 侧边栏按钮 (在所有屏幕尺寸下显示) -->
+                <button id="sidebar-toggle" class="mr-3 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <h1 class="text-2xl font-bold tracking-tight">HTML语法大全</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- 侧边栏 -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h2 class="text-lg font-semibold">HTML语法目录</h2>
+                <button id="sidebar-close" class="sidebar-close md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <!-- 基础介绍 -->
+                <div class="sidebar-section active">
+                    <div class="sidebar-section-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        <h3>基础介绍</h3>
+                        <span class="sidebar-toggle-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                    </div>
+                    <ul class="sidebar-section-menu">
+                        <li><a href="#what-is-html">什么是HTML</a></li>
+                        <li><a href="#how-browsers-work">浏览器如何工作</a></li>
+                        <li><a href="#tools-needed">所需工具</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 文档结构 -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <h3>文档结构</h3>
+                        <span class="sidebar-toggle-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                    </div>
+                    <ul class="sidebar-section-menu">
+                        <li><a href="#basic-structure">基本结构</a></li>
+                        <li><a href="#doctype">文档类型声明</a></li>
+                        <li><a href="#head-section">页眉部分</a></li>
+                        <li><a href="#body-section">页面主体</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 常用元素 -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                        <h3>常用元素</h3>
+                        <span class="sidebar-toggle-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                    </div>
+                    <ul class="sidebar-section-menu">
+                        <li><a href="#text-elements">文本元素</a></li>
+                        <li><a href="#list-elements">列表元素</a></li>
+                        <li><a href="#link-elements">链接元素</a></li>
+                        <li><a href="#media-elements">多媒体元素</a></li>
+                        <li><a href="#table-elements">表格元素</a></li>
+                        <li><a href="#form-elements">表单元素</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 元素属性 -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                        <h3>元素属性</h3>
+                        <span class="sidebar-toggle-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                    </div>
+                    <ul class="sidebar-section-menu">
+                        <li><a href="#global-attributes">全局属性</a></li>
+                        <li><a href="#specific-attributes">特定元素属性</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 高级应用 -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <h3>高级应用</h3>
+                        <span class="sidebar-toggle-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                    </div>
+                    <ul class="sidebar-section-menu">
+                        <li><a href="#semantic-html">语义化HTML</a></li>
+                        <li><a href="#html5-features">HTML5新特性</a></li>
+                        <li><a href="#accessibility">无障碍性</a></li>
+                        <li><a href="#seo-basics">SEO基础</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 常见问题 -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h3>常见问题</h3>
+                        <span class="sidebar-toggle-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                    </div>
+                    <ul class="sidebar-section-menu">
+                        <li><a href="#common-mistakes">常见错误</a></li>
+                        <li><a href="#best-practices">最佳实践</a></li>
+                        <li><a href="#resources">学习资源</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 侧边栏折叠按钮 -->
+            <div class="sidebar-collapse-btn" id="sidebar-collapse">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </div>
+        </aside>
+
+        <!-- 主要内容区 -->
+        <div class="content-wrapper">
+            <main class="container mx-auto px-4 py-8">
+                <section id="toc" class="mb-12 p-6 bg-white rounded-lg shadow-sm">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-semibold">目录</h2>
+                        <button id="toc-toggle" class="toc-toggle flex items-center text-gray-600 hover:text-gray-900 transition-colors">
+                            <span class="collapse-text">收起</span>
+                            <span class="expand-text hidden">展开</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 w-5 h-5 collapse-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 w-5 h-5 expand-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="toc-content" class="toc-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden transition-all duration-300">
+                        <div>
+                            <h3 class="font-medium mb-2 text-gray-700">基础介绍</h3>
+                            <ul class="space-y-1">
+                                <li><a href="#what-is-html" class="text-blue-600 hover:text-blue-800 hover:underline">什么是HTML</a></li>
+                                <li><a href="#how-browsers-work" class="text-blue-600 hover:text-blue-800 hover:underline">浏览器如何工作</a></li>
+                                <li><a href="#tools-needed" class="text-blue-600 hover:text-blue-800 hover:underline">所需工具</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-2 text-gray-700">文档结构</h3>
+                            <ul class="space-y-1">
+                                <li><a href="#basic-structure" class="text-blue-600 hover:text-blue-800 hover:underline">基本结构</a></li>
+                                <li><a href="#doctype" class="text-blue-600 hover:text-blue-800 hover:underline">文档类型声明</a></li>
+                                <li><a href="#head-section" class="text-blue-600 hover:text-blue-800 hover:underline">页眉部分</a></li>
+                                <li><a href="#body-section" class="text-blue-600 hover:text-blue-800 hover:underline">页面主体</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-2 text-gray-700">常用元素</h3>
+                            <ul class="space-y-1">
+                                <li><a href="#text-elements" class="text-blue-600 hover:text-blue-800 hover:underline">文本元素</a></li>
+                                <li><a href="#list-elements" class="text-blue-600 hover:text-blue-800 hover:underline">列表元素</a></li>
+                                <li><a href="#link-elements" class="text-blue-600 hover:text-blue-800 hover:underline">链接元素</a></li>
+                                <li><a href="#media-elements" class="text-blue-600 hover:text-blue-800 hover:underline">多媒体元素</a></li>
+                                <li><a href="#table-elements" class="text-blue-600 hover:text-blue-800 hover:underline">表格元素</a></li>
+                                <li><a href="#form-elements" class="text-blue-600 hover:text-blue-800 hover:underline">表单元素</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-2 text-gray-700">元素属性</h3>
+                            <ul class="space-y-1">
+                                <li><a href="#global-attributes" class="text-blue-600 hover:text-blue-800 hover:underline">全局属性</a></li>
+                                <li><a href="#specific-attributes" class="text-blue-600 hover:text-blue-800 hover:underline">特定元素属性</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-2 text-gray-700">高级应用</h3>
+                            <ul class="space-y-1">
+                                <li><a href="#semantic-html" class="text-blue-600 hover:text-blue-800 hover:underline">语义化HTML</a></li>
+                                <li><a href="#html5-features" class="text-blue-600 hover:text-blue-800 hover:underline">HTML5新特性</a></li>
+                                <li><a href="#accessibility" class="text-blue-600 hover:text-blue-800 hover:underline">无障碍性</a></li>
+                                <li><a href="#seo-basics" class="text-blue-600 hover:text-blue-800 hover:underline">SEO基础</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-2 text-gray-700">常见问题</h3>
+                            <ul class="space-y-1">
+                                <li><a href="#common-mistakes" class="text-blue-600 hover:text-blue-800 hover:underline">常见错误</a></li>
+                                <li><a href="#best-practices" class="text-blue-600 hover:text-blue-800 hover:underline">最佳实践</a></li>
+                                <li><a href="#resources" class="text-blue-600 hover:text-blue-800 hover:underline">学习资源</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="introduction" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">HTML基础介绍</h2>
+                    
+                    <article id="what-is-html" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">什么是HTML</h3>
+                        <div class="space-y-4">
+                            <p>HTML（HyperText Markup Language，超文本标记语言）是用于创建网页的标准标记语言。它描述了网页的结构，告诉浏览器如何展示内容。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">基础语法</h4>
+                                <p>HTML使用"标签"（tags）来标记不同的内容元素。一个HTML标签通常由一对尖括号&lt;和&gt;包围的关键词组成。</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">原理解释</h4>
+                                <p>浏览器读取HTML文档，识别各种标签及其内容，然后将它们渲染成用户可视的网页。HTML不是编程语言，而是一种标记语言，它告诉浏览器内容的结构和类型。</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">应用场景</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>创建网页和网站</li>
+                                    <li>构建Web应用程序</li>
+                                    <li>编写电子邮件模板</li>
+                                    <li>嵌入内容到其他平台</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">写法示例</h4>
+                                <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;h1&gt;这是一个标题&lt;/h1&gt;
+&lt;p&gt;这是一个段落。&lt;/p&gt;</code></pre>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">注意事项</h4>
+                                <p>HTML标签不区分大小写，但建议使用小写字母。现代网页开发中，HTML通常与CSS（样式）和JavaScript（交互）一起使用。</p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="how-browsers-work" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">浏览器如何工作</h3>
+                        <div class="space-y-4">
+                            <p>浏览器是一种解释和显示HTML文档的软件。了解浏览器如何工作有助于更好地编写HTML代码。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">基础原理</h4>
+                                <p>当你在浏览器中输入网址时，浏览器会向服务器请求HTML文件，然后解析这些文件并将它们呈现为可视化的网页。</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">渲染过程</h4>
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>下载HTML文档</li>
+                                    <li>解析HTML构建DOM树（Document Object Model，文档对象模型）</li>
+                                    <li>处理CSS构建CSSOM树</li>
+                                    <li>将DOM和CSSOM合并成渲染树</li>
+                                    <li>计算布局（Layout/Reflow）</li>
+                                    <li>绘制（Paint）页面</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">常见浏览器</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Google Chrome</li>
+                                    <li>Mozilla Firefox</li>
+                                    <li>Microsoft Edge</li>
+                                    <li>Apple Safari</li>
+                                    <li>Opera</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="tools-needed" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">所需工具</h3>
+                        <div class="space-y-4">
+                            <p>学习和编写HTML只需要几个基本工具：</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">文本编辑器</h4>
+                                <p>用于编写HTML代码的软件。常见的编辑器包括：</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Visual Studio Code（推荐，免费且功能强大）</li>
+                                    <li>Sublime Text</li>
+                                    <li>Notepad++</li>
+                                    <li>Atom</li>
+                                    <li>甚至是系统自带的记事本（不推荐，功能有限）</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">Web浏览器</h4>
+                                <p>用于查看和测试HTML页面。建议安装多个浏览器进行测试：</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Google Chrome（开发者工具功能强大）</li>
+                                    <li>Mozilla Firefox</li>
+                                    <li>Microsoft Edge</li>
+                                    <li>Safari（如果使用Mac）</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">在线学习平台</h4>
+                                <p>有助于边学边练：</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>W3Schools（提供在线编辑器）</li>
+                                    <li>MDN Web Docs（Mozilla的详尽文档）</li>
+                                    <li>Codecademy</li>
+                                    <li>freeCodeCamp</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="document-structure" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">HTML文档结构</h2>
+                    
+                    <article id="basic-structure" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">基本结构</h3>
+                        <div class="space-y-4">
+                            <p>每个HTML文档都有一个基本结构，包含必要的元素来定义网页。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">基础语法</h4>
+                                <p>一个完整的HTML文档通常包括文档类型声明、html、head和body元素。</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">写法示例</h4>
+                                <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;我的第一个网页&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;欢迎访问我的网页&lt;/h1&gt;
+    &lt;p&gt;这是一个段落。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">元素解释</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li><strong>&lt;!DOCTYPE html&gt;</strong>：文档类型声明，告诉浏览器这是一个HTML5文档。</li>
+                                    <li><strong>&lt;html&gt;</strong>：根元素，包含整个HTML文档。</li>
+                                    <li><strong>&lt;head&gt;</strong>：包含文档的元数据（不可见信息）。</li>
+                                    <li><strong>&lt;body&gt;</strong>：包含文档的可见内容。</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">原理解释</h4>
+                                <p>这种结构为浏览器提供了处理文档所需的所有信息。head部分告诉浏览器关于文档的信息，而body部分则包含实际显示给用户的内容。</p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="doctype" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">文档类型声明</h3>
+                        <div class="space-y-4">
+                            <p>文档类型声明（DOCTYPE）是HTML文档的第一行，告诉浏览器使用哪种HTML版本渲染页面。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">基础语法</h4>
+                                <p>在HTML5中，DOCTYPE的声明非常简单：</p>
+                                <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;!DOCTYPE html&gt;</code></pre>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">原理解释</h4>
+                                <p>DOCTYPE不是HTML标签，而是一条指令，告诉浏览器页面使用哪个HTML版本。如果没有DOCTYPE或DOCTYPE不正确，浏览器可能会进入"怪异模式"（Quirks Mode），这可能导致页面显示不一致。</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">历史版本</h4>
+                                <p>较旧的HTML版本有更复杂的DOCTYPE声明：</p>
+                                <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>/* HTML 4.01 Strict */
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+
+/* XHTML 1.0 Transitional */
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</code></pre>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">注意事项</h4>
+                                <p>DOCTYPE声明必须出现在HTML文档的第一行，在任何HTML标签之前。现代Web开发几乎总是使用HTML5的简化DOCTYPE。</p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="head-section" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">页眉部分（&lt;head&gt;）</h3>
+                        <div class="space-y-4">
+                            <p>&lt;head&gt;部分包含关于HTML文档的元数据和信息，这些内容不会直接显示在页面上。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">基础语法</h4>
+                                <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;页面标题&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">常用元素</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li><strong>&lt;title&gt;</strong> - 定义页面标题，显示在浏览器标签上</li>
+                                    <li><strong>&lt;meta&gt;</strong> - 提供关于HTML文档的元数据</li>
+                                    <li><strong>&lt;link&gt;</strong> - 链接到外部资源，如CSS文件</li>
+                                    <li><strong>&lt;style&gt;</strong> - 包含文档的CSS样式</li>
+                                    <li><strong>&lt;script&gt;</strong> - 包含JavaScript代码或链接到外部JavaScript文件</li>
+                                    <li><strong>&lt;base&gt;</strong> - 为页面上的所有相对URL指定基准URL</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">重要的meta标签</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li><strong>字符集声明</strong>: <code>&lt;meta charset="UTF-8"&gt;</code> - 指定文档的字符编码</li>
+                                    <li><strong>视口设置</strong>: <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> - 控制移动设备上的页面布局</li>
+                                    <li><strong>页面描述</strong>: <code>&lt;meta name="description" content="页面描述内容"&gt;</code> - 提供搜索引擎使用的页面摘要</li>
+                                    <li><strong>关键词</strong>: <code>&lt;meta name="keywords" content="HTML, CSS, JavaScript"&gt;</code> - 提供与页面相关的关键词（现已不太重要）</li>
+                                    <li><strong>作者</strong>: <code>&lt;meta name="author" content="作者姓名"&gt;</code> - 指定页面的作者</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">原理解释</h4>
+                                <p>head部分为浏览器和搜索引擎提供了处理和识别文档所需的信息。这些信息不会直接显示给用户，但对于页面的正确加载和优化至关重要。</p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="body-section" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">页面主体（&lt;body&gt;）</h3>
+                        <div class="space-y-4">
+                            <p>&lt;body&gt;元素包含网页的所有可见内容，包括文本、图像、链接、表格、列表等。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">基础语法</h4>
+                                <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;网站标题&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;!-- 导航链接 --&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;文章标题&lt;/h2&gt;
+            &lt;p&gt;文章内容...&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;© 2023 我的网站&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">内容类型</h4>
+                                <p>body标签中可以包含多种类型的内容：</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li><strong>文本内容</strong> - 标题、段落、强调文本等</li>
+                                    <li><strong>链接</strong> - 连接到其他页面或资源</li>
+                                    <li><strong>图像和多媒体</strong> - 图片、视频、音频</li>
+                                    <li><strong>列表</strong> - 有序列表、无序列表、定义列表</li>
+                                    <li><strong>表格</strong> - 展示表格数据</li>
+                                    <li><strong>表单</strong> - 用于用户输入</li>
+                                    <li><strong>交互元素</strong> - 按钮、下拉菜单等</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">语义化结构</h4>
+                                <p>现代HTML鼓励使用语义化标签组织body内容：</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li><strong>&lt;header&gt;</strong> - 页面或区块的头部</li>
+                                    <li><strong>&lt;nav&gt;</strong> - 导航链接区域</li>
+                                    <li><strong>&lt;main&gt;</strong> - 页面的主要内容</li>
+                                    <li><strong>&lt;article&gt;</strong> - 独立的、完整的内容块</li>
+                                    <li><strong>&lt;section&gt;</strong> - 文档中的一个区段</li>
+                                    <li><strong>&lt;aside&gt;</strong> - 侧边栏或附加信息</li>
+                                    <li><strong>&lt;footer&gt;</strong> - 页面或区块的底部</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">应用场景</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>创建网站的各个页面</li>
+                                    <li>构建博客文章和新闻页面</li>
+                                    <li>设计产品展示页面</li>
+                                    <li>开发用户登录和注册界面</li>
+                                    <li>制作联系表单和反馈系统</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="elements" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">HTML常用元素</h2>
+                    
+                    <article id="text-elements" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">文本元素</h3>
+                        <div class="space-y-4">
+                            <p>HTML提供了多种元素来标记和结构化文本内容。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">标题元素 &lt;h1&gt; 到 &lt;h6&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：HTML提供六级标题元素，从 &lt;h1&gt; 到 &lt;h6&gt;，用于表示不同级别的标题。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;h1&gt;一级标题&lt;/h1&gt;
+&lt;h2&gt;二级标题&lt;/h2&gt;
+&lt;h3&gt;三级标题&lt;/h3&gt;
+&lt;h4&gt;四级标题&lt;/h4&gt;
+&lt;h5&gt;五级标题&lt;/h5&gt;
+&lt;h6&gt;六级标题&lt;/h6&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：标题元素用于创建文档大纲和层次结构，&lt;h1&gt;表示最重要的标题，&lt;h6&gt;表示最不重要的标题。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>网页的主标题和副标题</li>
+                                        <li>文章的各级标题</li>
+                                        <li>产品描述的标题</li>
+                                        <li>网站各部分的标题</li>
+                                    </ul>
+                                    <p><strong>注意事项</strong>：每个页面应该只有一个&lt;h1&gt;标题，且应按层次使用标题（不要跳级）。标题对搜索引擎优化（SEO）很重要。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">段落元素 &lt;p&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：&lt;p&gt;元素用于定义段落文本。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;p&gt;这是一个段落。它包含一些文本内容。&lt;/p&gt;
+&lt;p&gt;这是另一个段落。&lt;/p&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：段落元素会自动在前后添加一些空间（边距），使文本块之间有明显的分隔。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>文章和博客内容</li>
+                                        <li>产品描述</li>
+                                        <li>网站介绍文本</li>
+                                        <li>新闻报道</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">文本格式化元素</h4>
+                                <div class="space-y-2">
+                                    <p><strong>常用文本格式化标签</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;strong&gt;重要文本&lt;/strong&gt;          // 显示为粗体，表示重要性
+&lt;em&gt;强调文本&lt;/em&gt;                // 显示为斜体，表示强调
+&lt;mark&gt;标记文本&lt;/mark&gt;          // 显示带有背景色的文本，如荧光笔效果
+&lt;del&gt;删除文本&lt;/del&gt;            // 显示为带删除线的文本
+&lt;ins&gt;插入文本&lt;/ins&gt;            // A显示为带下划线的文本，表示插入
+&lt;sub&gt;下标&lt;/sub&gt;                // 显示为下标（如化学公式H₂O中的2）
+&lt;sup&gt;上标&lt;/sup&gt;                // 显示为上标（如10²中的2）
+&lt;code&gt;代码片段&lt;/code&gt;          // 显示为等宽字体，用于代码
+&lt;pre&gt;预格式化文本&lt;/pre&gt;        // 保留文本中的空格和换行</code></pre>
+                                    <p><strong>基本与样式标签对比</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>/* 语义化（推荐） */
+&lt;strong&gt;重要文本&lt;/strong&gt;
+&lt;em&gt;强调文本&lt;/em&gt;
+
+/* 仅表示样式（不推荐） */
+&lt;b&gt;粗体文本&lt;/b&gt;
+&lt;i&gt;斜体文本&lt;/i&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：语义化标签不仅改变文本的外观，还传达内容的含义或重要性。这对辅助技术（如屏幕阅读器）特别重要。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>在文章中强调重要概念</li>
+                                        <li>标记文档中的修订内容</li>
+                                        <li>展示程序代码</li>
+                                        <li>表示科学公式中的上下标</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">换行和水平线</h4>
+                                <div class="space-y-2">
+                                    <p><strong>换行元素 &lt;br&gt;</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>这是第一行文本&lt;br&gt;这是第二行文本</code></pre>
+                                    <p><strong>水平线元素 &lt;hr&gt;</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;p&gt;第一部分内容&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;第二部分内容&lt;/p&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：&lt;br&gt; 和 &lt;hr&gt; 是空元素（没有结束标签）。&lt;br&gt; 在文本中插入一个换行符，而 &lt;hr&gt; 插入一条水平线，表示主题的改变。</p>
+                                    <p><strong>注意事项</strong>：不要使用多个 &lt;br&gt; 标签来创建间距，应该使用CSS的margin或padding属性。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">引用元素</h4>
+                                <div class="space-y-2">
+                                    <p><strong>块引用 &lt;blockquote&gt;</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;blockquote cite="https://source.url"&gt;
+    &lt;p&gt;这是一段较长的引用文本。通常用于引用其他来源的整段内容。&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+                                    <p><strong>行内引用 &lt;q&gt;</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;p&gt;爱因斯坦说：&lt;q&gt;想象力比知识更重要。&lt;/q&gt;&lt;/p&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：引用元素表明内容是从其他来源引用的。&lt;blockquote&gt; 用于较长的引用并通常缩进显示，而 &lt;q&gt; 用于短引用，通常自动添加引号。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="list-elements" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">列表元素</h3>
+                        <div class="space-y-4">
+                            <p>HTML提供几种不同类型的列表，用于组织相关信息。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">无序列表 &lt;ul&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：无序列表使用 &lt;ul&gt; 标签创建，其中每个列表项使用 &lt;li&gt; 标签。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;ul&gt;
+    &lt;li&gt;苹果&lt;/li&gt;
+    &lt;li&gt;香蕉&lt;/li&gt;
+    &lt;li&gt;橙子&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：无序列表中的项目没有特定的顺序，通常以项目符号（圆点）开头。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>导航菜单</li>
+                                        <li>功能列表</li>
+                                        <li>产品特性列表</li>
+                                        <li>任何不需要特定顺序的列表</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">有序列表 &lt;ol&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：有序列表使用 &lt;ol&gt; 标签创建，其中每个列表项使用 &lt;li&gt; 标签。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;ol&gt;
+    &lt;li&gt;预热烤箱&lt;/li&gt;
+    &lt;li&gt;准备面团&lt;/li&gt;
+    &lt;li&gt;烘烤30分钟&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                                    <p><strong>高级属性</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;ol start="5"&gt;                 // 从5开始编号
+    &lt;li&gt;第五项&lt;/li&gt;
+    &lt;li&gt;第六项&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol type="A"&gt;                  // 使用大写字母编号
+    &lt;li&gt;A项&lt;/li&gt;
+    &lt;li&gt;B项&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol type="i" reversed&gt;        // 使用小写罗马数字并倒序
+    &lt;li&gt;第三项&lt;/li&gt;
+    &lt;li&gt;第二项&lt;/li&gt;
+    &lt;li&gt;第一项&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：有序列表中的项目有明确的顺序，通常以数字或字母开头。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>步骤说明</li>
+                                        <li>排名列表</li>
+                                        <li>教程中的步骤</li>
+                                        <li>任何需要特定顺序的列表</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">定义列表 &lt;dl&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：定义列表用于术语及其定义，包括 &lt;dl&gt;（定义列表）、&lt;dt&gt;（定义术语）和 &lt;dd&gt;（术语描述）。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;超文本标记语言，用于创建网页的标准标记语言。&lt;/dd&gt;
+    
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;层叠样式表，用于描述HTML文档样式的语言。&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：定义列表专门用于术语及其解释或定义的列表，非常适合词汇表或FAQ。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>术语表和词汇解释</li>
+                                        <li>常见问题解答（FAQ）</li>
+                                        <li>产品功能及其描述</li>
+                                        <li>元数据展示（如作者、日期、类别等）</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">嵌套列表</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：列表可以嵌套，创建层次结构。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;ul&gt;
+    &lt;li&gt;水果
+        &lt;ul&gt;
+            &lt;li&gt;柑橘类
+                &lt;ul&gt;
+                    &lt;li&gt;橙子&lt;/li&gt;
+                    &lt;li&gt;柠檬&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;浆果类
+                &lt;ul&gt;
+                    &lt;li&gt;草莓&lt;/li&gt;
+                    &lt;li&gt;蓝莓&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;蔬菜
+        &lt;ul&gt;
+            &lt;li&gt;叶菜类&lt;/li&gt;
+            &lt;li&gt;根茎类&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：列表可以包含其他列表，创建层次结构，非常适合表示分类或导航菜单。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>多级导航菜单</li>
+                                        <li>目录结构</li>
+                                        <li>产品分类</li>
+                                        <li>组织结构图</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="link-elements" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">链接元素</h3>
+                        <div class="space-y-4">
+                            <p>HTML链接允许用户从一个页面导航到另一个页面，是Web的基础功能之一。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">基本链接 &lt;a&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;a&gt; 标签创建超链接，href 属性指定链接目标。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;a href="https://www.example.com"&gt;访问Example网站&lt;/a&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：当用户点击链接文本时，浏览器会导航到 href 属性中指定的URL。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>导航到其他网页</li>
+                                        <li>链接到网站内的其他页面</li>
+                                        <li>提供下载链接</li>
+                                        <li>创建交互式元素</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">链接类型</h4>
+                                <div class="space-y-2">
+                                    <p><strong>绝对URL</strong>：完整的Web地址</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;a href="https://www.example.com/page.html"&gt;绝对URL&lt;/a&gt;</code></pre>
+                                    
+                                    <p><strong>相对URL</strong>：相对于当前页面的路径</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;a href="about.html"&gt;当前目录中的页面&lt;/a&gt;
+&lt;a href="pages/contact.html"&gt;子目录中的页面&lt;/a&gt;
+&lt;a href="../index.html"&gt;上一级目录中的页面&lt;/a&gt;</code></pre>
+                                    
+                                    <p><strong>锚点链接</strong>：链接到页面内的特定部分</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;!-- 页面中的某个位置 --&gt;
+&lt;h2 id="section1"&gt;第一节&lt;/h2&gt;
+
+&lt;!-- 链接到该位置 --&gt;
+&lt;a href="#section1"&gt;跳到第一节&lt;/a&gt;
+
+&lt;!-- 链接到另一个页面的特定位置 --&gt;
+&lt;a href="page.html#section1"&gt;跳到另一页面的第一节&lt;/a&gt;</code></pre>
+                                    
+                                    <p><strong>邮件链接</strong>：打开邮件客户端</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;a href="mailto:someone@example.com"&gt;发送邮件&lt;/a&gt;
+
+&lt;!-- 带主题和正文的邮件链接 --&gt;
+&lt;a href="mailto:someone@example.com?subject=问候&body=你好，我有一个问题..."&gt;发送邮件&lt;/a&gt;</code></pre>
+                                    
+                                    <p><strong>电话链接</strong>：在移动设备上可触发拨号</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;a href="tel:+1234567890"&gt;拨打电话&lt;/a&gt;</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">链接属性</h4>
+                                <div class="space-y-2">
+                                    <p><strong>target 属性</strong>：指定链接的打开方式</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;a href="https://www.example.com" target="_blank"&gt;在新标签页打开&lt;/a&gt;
+&lt;a href="https://www.example.com" target="_self"&gt;在当前标签页打开（默认）&lt;/a&gt;
+&lt;a href="https://www.example.com" target="_parent"&gt;在父框架中打开&lt;/a&gt;
+&lt;a href="https://www.example.com" target="_top"&gt;在整个窗口中打开&lt;/a&gt;</code></pre>
+                                    
+                                    <p><strong>rel 属性</strong>：指定当前文档与链接文档的关系</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;a href="https://www.example.com" rel="nofollow"&gt;告诉搜索引擎不要跟踪此链接&lt;/a&gt;
+&lt;a href="https://www.example.com" rel="noopener noreferrer" target="_blank"&gt;安全的外部链接&lt;/a&gt;
+&lt;a href="terms.html" rel="help"&gt;帮助文档&lt;/a&gt;</code></pre>
+                                    
+                                    <p><strong>download 属性</strong>：指定链接为下载链接</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;a href="file.pdf" download&gt;下载PDF&lt;/a&gt;
+&lt;a href="image.jpg" download="custom-filename.jpg"&gt;下载图片&lt;/a&gt;</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">图像链接</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：图像也可以是链接</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;a href="https://www.example.com"&gt;
+    &lt;img src="button.png" alt="点击访问Example"&gt;
+&lt;/a&gt;</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">注意事项</h4>
+                                <div class="space-y-2">
+                                    <ul class="list-disc pl-5">
+                                        <li>对于外部链接，特别是在新标签页打开的链接，考虑使用 <code>rel="noopener noreferrer"</code> 以提高安全性。</li>
+                                        <li>确保链接文本是描述性的，让用户知道点击链接会发生什么。</li>
+                                        <li>避免使用"点击这里"这样的非描述性链接文本。</li>
+                                        <li>检查所有链接以确保它们指向正确的目标并且没有断开。</li>
+                                        <li>考虑添加适当的视觉反馈（如悬停效果）以提高用户体验。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="media-elements" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">多媒体元素</h3>
+                        <div class="space-y-4">
+                            <p>HTML支持多种多媒体元素，包括图像、视频和音频。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">图像 &lt;img&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;img&gt; 标签在页面中嵌入图像。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;img src="image.jpg" alt="图像描述"&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：&lt;img&gt; 标签是一个空元素（没有结束标签），src 属性指定图像的URL，alt 属性提供替代文本，当图像无法显示时或对于使用屏幕阅读器的用户会用到。</p>
+                                    <p><strong>常用属性</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;img src="image.jpg" alt="图像描述" width="500" height="300"&gt;  // 设置宽度和高度
+&lt;img src="image.jpg" alt="图像描述" loading="lazy"&gt;  // 懒加载，提高页面加载性能
+&lt;img src="image.jpg" alt="图像描述" title="悬停时显示的文本"&gt;  // 鼠标悬停提示</code></pre>
+                                    <p><strong>响应式图片</strong>：使用 srcset 和 sizes 属性实现响应式图片。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;img 
+    src="small.jpg" 
+    srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w" 
+    sizes="(max-width: 600px) 500px, (max-width: 1200px) 1000px, 1500px" 
+    alt="响应式图像"&gt;</code></pre>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>网站标志和图标</li>
+                                        <li>产品图片</li>
+                                        <li>文章配图</li>
+                                        <li>背景和装饰图像</li>
+                                        <li>图表和数据可视化</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">视频 &lt;video&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;video&gt; 标签在页面中嵌入视频。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;video width="320" height="240" controls&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    &lt;source src="movie.webm" type="video/webm"&gt;
+    您的浏览器不支持视频标签。
+&lt;/video&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：&lt;video&gt; 标签定义了视频播放区域，可以包含多个 &lt;source&gt; 标签以提供不同格式的视频源，浏览器将使用它支持的第一种格式。</p>
+                                    <p><strong>常用属性</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;video controls&gt; // 显示播放控件（播放/暂停按钮、音量控制等）
+&lt;video autoplay&gt; // 视频自动播放（注意：许多浏览器会阻止自动播放）
+&lt;video loop&gt; // 视频播放结束后循环播放
+&lt;video muted&gt; // 静音播放
+&lt;video poster="thumbnail.jpg"&gt; // 在视频加载或播放前显示的图像
+&lt;video preload="auto|metadata|none"&gt; // 视频预加载策略</code></pre>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>产品演示视频</li>
+                                        <li>教程和操作指南</li>
+                                        <li>背景视频</li>
+                                        <li>广告和营销内容</li>
+                                        <li>视频博客/Vlog</li>
+                                    </ul>
+                                    <p><strong>注意事项</strong>：出于隐私和带宽考虑，大多数移动浏览器不会自动播放视频，特别是带声音的视频。通常需要用户交互才能开始播放。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">音频 &lt;audio&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;audio&gt; 标签在页面中嵌入音频。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;audio controls&gt;
+    &lt;source src="music.mp3" type="audio/mpeg"&gt;
+    &lt;source src="music.ogg" type="audio/ogg"&gt;
+    您的浏览器不支持音频标签。
+&lt;/audio&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：类似于 &lt;video&gt; 标签，&lt;audio&gt; 标签定义了音频播放区域，可以包含多个 &lt;source&gt; 标签以提供不同格式的音频源。</p>
+                                    <p><strong>常用属性</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;audio controls&gt; // 显示播放控件
+&lt;audio autoplay&gt; // 音频自动播放（同样受浏览器限制）
+&lt;audio loop&gt; // 循环播放
+&lt;audio muted&gt; // 静音播放
+&lt;audio preload="auto|metadata|none"&gt; // 音频预加载策略</code></pre>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>音乐播放器</li>
+                                        <li>播客和音频博客</li>
+                                        <li>语言学习材料</li>
+                                        <li>声音效果</li>
+                                        <li>背景音乐</li>
+                                    </ul>
+                                    <p><strong>注意事项</strong>：与视频类似，大多数现代浏览器限制自动播放带声音的媒体，需要用户交互才能开始播放。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">图像映射 &lt;map&gt; 和 &lt;area&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：图像映射允许在图像的不同区域创建可点击的区域。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;img src="workplace.jpg" alt="工作区" usemap="#workmap"&gt;
+
+&lt;map name="workmap"&gt;
+    &lt;area shape="rect" coords="34,44,270,350" alt="计算机" href="computer.html"&gt;
+    &lt;area shape="rect" coords="290,172,333,250" alt="电话" href="phone.html"&gt;
+    &lt;area shape="circle" coords="337,300,44" alt="咖啡" href="coffee.html"&gt;
+&lt;/map&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：&lt;map&gt; 标签定义一个图像映射，&lt;area&gt; 标签定义映射中的可点击区域及其链接目标。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>地图导航</li>
+                                        <li>解剖图或示意图</li>
+                                        <li>复杂产品展示</li>
+                                        <li>交互式图表</li>
+                                    </ul>
+                                    <p><strong>注意事项</strong>：图像映射在移动设备上不太实用，因为坐标是固定的，而响应式设计中图像大小可能会改变。现代网页开发中，图像映射的使用已经减少，通常更倾向于使用CSS和JavaScript创建更灵活的解决方案。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="table-elements" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">表格元素</h3>
+                        <div class="space-y-4">
+                            <p>HTML表格用于以行和列的形式展示数据。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">基本表格结构</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;table&gt;、&lt;tr&gt;、&lt;th&gt; 和 &lt;td&gt; 标签创建表格。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;姓名&lt;/th&gt;
+        &lt;th&gt;年龄&lt;/th&gt;
+        &lt;th&gt;职业&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;张三&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+        &lt;td&gt;工程师&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;李四&lt;/td&gt;
+        &lt;td&gt;30&lt;/td&gt;
+        &lt;td&gt;设计师&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>&lt;table&gt;</strong> - 定义整个表格</li>
+                                        <li><strong>&lt;tr&gt;</strong> - 定义表格中的行（Table Row）</li>
+                                        <li><strong>&lt;th&gt;</strong> - 定义表头单元格（Table Header cell）</li>
+                                        <li><strong>&lt;td&gt;</strong> - 定义普通数据单元格（Table Data cell）</li>
+                                    </ul>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>数据表格</li>
+                                        <li>产品比较表</li>
+                                        <li>价格列表</li>
+                                        <li>时间表和日程安排</li>
+                                        <li>统计数据展示</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">表格结构元素</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;thead&gt;、&lt;tbody&gt; 和 &lt;tfoot&gt; 标签可以更好地组织表格结构。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;产品&lt;/th&gt;
+            &lt;th&gt;价格&lt;/th&gt;
+            &lt;th&gt;数量&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;手机&lt;/td&gt;
+            &lt;td&gt;2999元&lt;/td&gt;
+            &lt;td&gt;1&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;耳机&lt;/td&gt;
+            &lt;td&gt;499元&lt;/td&gt;
+            &lt;td&gt;2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;总计&lt;/td&gt;
+            &lt;td colspan="2"&gt;3997元&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>&lt;thead&gt;</strong> - 表头部分，通常包含列标题</li>
+                                        <li><strong>&lt;tbody&gt;</strong> - 表格主体，包含数据行</li>
+                                        <li><strong>&lt;tfoot&gt;</strong> - 表格页脚，通常包含汇总信息</li>
+                                    </ul>
+                                    <p><strong>优势</strong>：使用这些元素可以使表格结构更清晰，同时也便于使用CSS对表格不同部分进行样式设置。在打印长表格时，&lt;thead&gt; 和 &lt;tfoot&gt; 也会在每页上重复显示。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">单元格合并</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 colspan 和 rowspan 属性可以合并单元格。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>/* 列合并 */
+&lt;tr&gt;
+    &lt;td&gt;单元格1&lt;/td&gt;
+    &lt;td colspan="2"&gt;这个单元格占据2列&lt;/td&gt;
+&lt;/tr&gt;
+
+/* 行合并 */
+&lt;tr&gt;
+    &lt;td rowspan="2"&gt;这个单元格占据2行&lt;/td&gt;
+    &lt;td&gt;单元格2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;单元格3&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>colspan</strong> - 指定单元格横跨的列数</li>
+                                        <li><strong>rowspan</strong> - 指定单元格纵跨的行数</li>
+                                    </ul>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>复杂的数据表格</li>
+                                        <li>日程表和时间表</li>
+                                        <li>分组显示相关数据</li>
+                                        <li>在表格中创建标题和小计</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">表格标题和摘要</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;caption&gt; 标签为表格添加标题，使用 summary 属性添加摘要（不过 summary 属性在 HTML5 中已被弃用）。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;table&gt;
+    &lt;caption&gt;员工信息表&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th&gt;姓名&lt;/th&gt;
+        &lt;th&gt;部门&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;张三&lt;/td&gt;
+        &lt;td&gt;开发部&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：&lt;caption&gt; 标签定义表格的标题或说明，通常会显示在表格的顶部。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">表格的无障碍性和语义化</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 scope 属性和 headers 属性可以提高表格的无障碍性。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th scope="col"&gt;姓名&lt;/th&gt;
+        &lt;th scope="col"&gt;年龄&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th scope="row"&gt;张三&lt;/th&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+/* 更复杂的表格可以使用 id 和 headers 属性 */
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th id="name"&gt;姓名&lt;/th&gt;
+        &lt;th id="age"&gt;年龄&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td headers="name"&gt;张三&lt;/td&gt;
+        &lt;td headers="age"&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>scope 属性</strong> - 指示表头单元格是列标题（col）还是行标题（row）</li>
+                                        <li><strong>headers 属性</strong> - 将数据单元格与其对应的表头单元格关联起来</li>
+                                    </ul>
+                                    <p><strong>重要性</strong>：这些属性对使用屏幕阅读器的用户特别重要，可以帮助他们理解表格的结构和内容之间的关系。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">注意事项</h4>
+                                <div class="space-y-2">
+                                    <ul class="list-disc pl-5">
+                                        <li>表格应该仅用于展示表格数据，而不是用于页面布局。使用CSS进行布局是更好的选择。</li>
+                                        <li>大型表格在移动设备上可能难以阅读。考虑使用响应式设计技术，如水平滚动或重新组织数据。</li>
+                                        <li>为提高无障碍性，始终使用恰当的表格结构元素（&lt;thead&gt;, &lt;tbody&gt;, &lt;th&gt;）和属性（scope, headers）。</li>
+                                        <li>使用CSS可以大大改善表格的外观，例如设置边框、交替行颜色、调整间距等。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="form-elements" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">表单元素</h3>
+                        <div class="space-y-4">
+                            <p>HTML表单用于收集用户输入，是用户交互的重要组成部分。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">基本表单结构</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;form&gt; 标签创建表单，其中包含各种输入元素。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;form action="/submit-form" method="post"&gt;
+    &lt;!-- 表单元素放在这里 --&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="submit" value="提交"&gt;
+&lt;/form&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：&lt;form&gt; 标签定义了HTML表单。它是一个容器，包含各种输入元素，如文本字段、复选框、单选按钮、提交按钮等。</p>
+                                    <p><strong>重要属性</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>action</strong> - 指定表单提交的URL</li>
+                                        <li><strong>method</strong> - 指定提交表单的HTTP方法（"get"或"post"）</li>
+                                        <li><strong>enctype</strong> - 指定提交表单时数据的编码方式（对于文件上传，需要使用"multipart/form-data"）</li>
+                                        <li><strong>target</strong> - 指定提交表单后结果的显示位置</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">输入元素 &lt;input&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：&lt;input&gt; 标签是最重要的表单元素，可以通过type属性显示多种不同类型。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>/* 文本输入框 */
+&lt;input type="text" name="username" placeholder="请输入用户名"&gt;
+
+/* 密码输入框 */
+&lt;input type="password" name="password" placeholder="请输入密码"&gt;
+
+/* 单选按钮 */
+&lt;input type="radio" name="gender" value="male" id="male"&gt;
+&lt;label for="male"&gt;男&lt;/label&gt;
+&lt;input type="radio" name="gender" value="female" id="female"&gt;
+&lt;label for="female"&gt;女&lt;/label&gt;
+
+/* 复选框 */
+&lt;input type="checkbox" name="interests" value="coding" id="coding"&gt;
+&lt;label for="coding"&gt;编程&lt;/label&gt;
+&lt;input type="checkbox" name="interests" value="reading" id="reading"&gt;
+&lt;label for="reading"&gt;阅读&lt;/label&gt;
+
+/* 文件上传 */
+&lt;input type="file" name="document"&gt;
+
+/* 隐藏字段 */
+&lt;input type="hidden" name="user_id" value="12345"&gt;
+
+/* 提交按钮 */
+&lt;input type="submit" value="提交"&gt;
+
+/* 重置按钮 */
+&lt;input type="reset" value="重置"&gt;</code></pre>
+                                    <p><strong>HTML5新增输入类型</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>/* 邮箱输入 */
+&lt;input type="email" name="email"&gt;
+
+/* URL输入 */
+&lt;input type="url" name="website"&gt;
+
+/* 数字输入 */
+&lt;input type="number" name="quantity" min="1" max="99" step="1"&gt;
+
+/* 日期选择 */
+&lt;input type="date" name="birthday"&gt;
+
+/* 滑块 */
+&lt;input type="range" name="rating" min="1" max="10"&gt;
+
+/* 颜色选择器 */
+&lt;input type="color" name="favorite_color"&gt;
+
+/* 搜索框 */
+&lt;input type="search" name="search_query"&gt;</code></pre>
+                                    <p><strong>常用属性</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>name</strong> - 指定输入字段的名称，在表单提交时使用</li>
+                                        <li><strong>value</strong> - 指定输入字段的初始值</li>
+                                        <li><strong>placeholder</strong> - 提供输入字段的提示</li>
+                                        <li><strong>required</strong> - 指定输入字段必须填写</li>
+                                        <li><strong>disabled</strong> - 禁用输入字段</li>
+                                        <li><strong>readonly</strong> - 输入字段为只读</li>
+                                        <li><strong>maxlength</strong> - 指定输入字段的最大字符数</li>
+                                        <li><strong>min/max</strong> - 数值字段的最小/最大值</li>
+                                        <li><strong>pattern</strong> - 指定验证输入的正则表达式模式</li>
+                                        <li><strong>autofocus</strong> - 页面加载时自动获取焦点</li>
+                                        <li><strong>autocomplete</strong> - 启用/禁用自动完成功能</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">文本区域 &lt;textarea&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;textarea&gt; 标签创建多行文本输入字段。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;textarea name="comment" rows="4" cols="50" placeholder="请输入评论"&gt;&lt;/textarea&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：&lt;textarea&gt; 标签定义多行文本输入控件，适合输入较长的内容。</p>
+                                    <p><strong>常用属性</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>rows</strong> - 指定可见行数</li>
+                                        <li><strong>cols</strong> - 指定可见宽度</li>
+                                        <li><strong>name</strong> - 文本区域的名称</li>
+                                        <li><strong>placeholder</strong> - 提示文本</li>
+                                        <li><strong>maxlength</strong> - 最大字符数</li>
+                                        <li><strong>wrap</strong> - 指定文本换行方式（soft, hard）</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">下拉列表 &lt;select&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;select&gt; 和 &lt;option&gt; 标签创建下拉列表。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;select name="country"&gt;
+    &lt;option value=""&gt;--请选择国家--&lt;/option&gt;
+    &lt;option value="china"&gt;中国&lt;/option&gt;
+    &lt;option value="usa"&gt;美国&lt;/option&gt;
+    &lt;option value="uk"&gt;英国&lt;/option&gt;
+&lt;/select&gt;
+
+/* 分组的下拉列表 */
+&lt;select name="car"&gt;
+    &lt;optgroup label="德国车"&gt;
+        &lt;option value="audi"&gt;奥迪&lt;/option&gt;
+        &lt;option value="bmw"&gt;宝马&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label="日本车"&gt;
+        &lt;option value="toyota"&gt;丰田&lt;/option&gt;
+        &lt;option value="honda"&gt;本田&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select&gt;
+
+/* 多选下拉列表 */
+&lt;select name="fruits" multiple size="4"&gt;
+    &lt;option value="apple"&gt;苹果&lt;/option&gt;
+    &lt;option value="banana"&gt;香蕉&lt;/option&gt;
+    &lt;option value="orange"&gt;橙子&lt;/option&gt;
+    &lt;option value="grape"&gt;葡萄&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：&lt;select&gt; 标签定义了一个下拉列表，&lt;option&gt; 标签定义了列表中的选项。</p>
+                                    <p><strong>常用属性</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>multiple</strong> - 允许选择多个选项</li>
+                                        <li><strong>size</strong> - 指定可见选项数</li>
+                                        <li><strong>name</strong> - 下拉列表的名称</li>
+                                        <li><strong>disabled</strong> - 禁用下拉列表</li>
+                                        <li><strong>required</strong> - 必须选择一个选项</li>
+                                    </ul>
+                                    <p><strong>option标签属性</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>value</strong> - 选项的值（提交到服务器的值）</li>
+                                        <li><strong>selected</strong> - 预选该选项</li>
+                                        <li><strong>disabled</strong> - 禁用该选项</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">按钮 &lt;button&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;button&gt; 标签创建按钮。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;button type="button"&gt;点击我&lt;/button&gt;
+&lt;button type="submit"&gt;提交表单&lt;/button&gt;
+&lt;button type="reset"&gt;重置表单&lt;/button&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：&lt;button&gt; 标签定义了一个可点击的按钮。与 &lt;input type="button"&gt; 相比，&lt;button&gt; 标签可以包含HTML内容，而不仅仅是文本。</p>
+                                    <p><strong>常用属性</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>type</strong> - 按钮类型（button, submit, reset）</li>
+                                        <li><strong>name</strong> - 按钮名称</li>
+                                        <li><strong>value</strong> - 按钮的值</li>
+                                        <li><strong>disabled</strong> - 禁用按钮</li>
+                                        <li><strong>form</strong> - 指定按钮关联的表单</li>
+                                        <li><strong>formaction</strong> - 覆盖表单的action属性</li>
+                                        <li><strong>formmethod</strong> - 覆盖表单的method属性</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">标签 &lt;label&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;label&gt; 标签为表单元素定义标签。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>/* 使用for属性关联表单元素 */
+&lt;label for="username"&gt;用户名：&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;
+
+/* 将表单元素包裹在label内 */
+&lt;label&gt;
+    记住我
+    &lt;input type="checkbox" name="remember"&gt;
+&lt;/label&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：&lt;label&gt; 标签为输入元素定义标签。点击标签会将焦点转移到关联的输入元素上，这提高了表单的可用性，特别是对于复选框和单选按钮。</p>
+                                    <p><strong>重要性</strong>：标签对于无障碍访问非常重要，它们使屏幕阅读器可以正确识别输入字段的用途，并允许用户通过点击标签选择相应的表单控件。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">字段集 &lt;fieldset&gt; 和 图例 &lt;legend&gt;</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用 &lt;fieldset&gt; 和 &lt;legend&gt; 标签对表单元素进行分组。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;fieldset&gt;
+    &lt;legend&gt;个人信息&lt;/legend&gt;
+    &lt;label for="name"&gt;姓名：&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;
+    
+    &lt;label for="email"&gt;邮箱：&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+&lt;/fieldset&gt;
+
+&lt;fieldset&gt;
+    &lt;legend&gt;联系方式&lt;/legend&gt;
+    &lt;label for="phone"&gt;电话：&lt;/label&gt;
+    &lt;input type="tel" id="phone" name="phone"&gt;&lt;br&gt;
+    
+    &lt;label for="address"&gt;地址：&lt;/label&gt;
+    &lt;input type="text" id="address" name="address"&gt;
+&lt;/fieldset&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：&lt;fieldset&gt; 标签用于将相关的表单元素分组，并在周围绘制一个框。&lt;legend&gt; 标签为 &lt;fieldset&gt; 元素定义标题。</p>
+                                    <p><strong>优势</strong>：使用fieldset和legend可以使表单更有组织性，特别是在长表单中。这也提高了无障碍性，使屏幕阅读器用户更容易理解表单结构。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">表单验证</h4>
+                                <div class="space-y-2">
+                                    <p><strong>HTML5表单验证属性</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>/* 必填字段 */
+&lt;input type="text" required&gt;
+
+/* 最小/最大长度 */
+&lt;input type="text" minlength="3" maxlength="50"&gt;
+
+/* 数字范围 */
+&lt;input type="number" min="1" max="100"&gt;
+
+/* 模式匹配（正则表达式） */
+&lt;input type="text" pattern="[A-Za-z]{3,}" title="至少3个字母"&gt;
+
+/* 禁用验证 */
+&lt;form novalidate&gt;
+    ...
+&lt;/form&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：HTML5引入了内置的表单验证功能，允许浏览器在提交前检查输入是否有效，无需JavaScript。</p>
+                                    <p><strong>优势</strong>：内置验证提供了即时反馈，减少了服务器负担，并提高了用户体验。但请注意，客户端验证不应替代服务器端验证，因为客户端验证可以被绕过。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">注意事项</h4>
+                                <div class="space-y-2">
+                                    <ul class="list-disc pl-5">
+                                        <li>始终为表单元素提供清晰的标签，以提高可用性。</li>
+                                        <li>使用适当的输入类型可以提供更好的移动设备体验（例如，在手机上输入电话号码时会显示数字键盘）。</li>
+                                        <li>确保表单是可访问的，包括提供适当的标签、焦点状态和错误消息。</li>
+                                        <li>总是在服务器端进行验证，即使已经有客户端验证，因为客户端验证可以被绕过。</li>
+                                        <li>考虑使用 &lt;fieldset&gt; 和 &lt;legend&gt; 组织长表单，使其更易于理解。</li>
+                                        <li>为每个表单元素提供适当的 name 属性，这是表单提交所必需的。</li>
+                                        <li>当上传文件时，记得在 &lt;form&gt; 标签中添加 enctype="multipart/form-data"。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="attributes" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">HTML元素属性</h2>
+                    
+                    <article id="global-attributes" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">全局属性</h3>
+                        <div class="space-y-4">
+                            <p>全局属性是可以用于所有HTML元素的属性。它们提供了元素的额外信息或功能。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">id 属性</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：为元素指定唯一标识符。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;div id="main-content"&gt;主要内容&lt;/div&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：id 属性为元素提供唯一的标识符，在页面中必须是唯一的。可以用于CSS选择器、JavaScript操作和作为锚点链接的目标。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>为CSS选择器提供目标</li>
+                                        <li>用JavaScript操作特定元素</li>
+                                        <li>创建页内锚点链接</li>
+                                        <li>与<code>&lt;label&gt;</code>标签的<code>for</code>属性配合使用</li>
+                                    </ul>
+                                    <p><strong>注意事项</strong>：每个页面中的id值必须唯一，不能重复。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">class 属性</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：为元素指定一个或多个类名。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;p class="note important highlight"&gt;这是一个重要的笔记。&lt;/p&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：class 属性为元素指定一个或多个类名，多个类名用空格分隔。类名主要用于CSS样式表和JavaScript。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>应用CSS样式到多个元素</li>
+                                        <li>使用JavaScript选择和操作一组元素</li>
+                                        <li>组织和分类页面元素</li>
+                                        <li>实现组件化设计</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">style 属性</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：为元素指定内联样式。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;p style="color: blue; font-size: 18px;"&gt;带样式的文本&lt;/p&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：style 属性包含CSS声明，直接应用于特定元素。这些样式会覆盖外部样式表中的样式。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>为单个元素应用特定样式</li>
+                                        <li>快速测试样式变化</li>
+                                        <li>动态生成的内容样式</li>
+                                    </ul>
+                                    <p><strong>注意事项</strong>：一般推荐使用外部CSS文件而非内联样式，以保持内容和样式分离，便于维护。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">title 属性</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：为元素提供额外的信息，通常在鼠标悬停时显示为工具提示。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;a href="https://example.com" title="访问Example网站"&gt;Example&lt;/a&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：title 属性在用户将鼠标悬停在元素上时显示提示信息。它也可以被屏幕阅读器读取，提供额外的无障碍信息。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>为链接提供更多信息</li>
+                                        <li>解释缩写或术语</li>
+                                        <li>为图像提供详细描述</li>
+                                        <li>为表单元素提供填写指导</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">lang 属性</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：指定元素内容的语言。</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;html lang="zh-CN"&gt;
+    ...
+&lt;/html&gt;
+
+&lt;p lang="en"&gt;This paragraph is in English.&lt;/p&gt;
+&lt;p lang="fr"&gt;Ce paragraphe est en français.&lt;/p&gt;</code></pre>
+                                    <p><strong>原理解释</strong>：lang 属性指定元素内容的语言，帮助搜索引擎、浏览器和屏幕阅读器正确处理和呈现内容。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>多语言网站的语言标记</li>
+                                        <li>改善搜索引擎对内容的理解</li>
+                                        <li>帮助屏幕阅读器使用正确的发音</li>
+                                        <li>为拼写检查器提供语言线索</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">其他重要的全局属性</h4>
+                                <div class="space-y-2">
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>hidden</strong> - 指定元素尚未或不再相关，因此不应显示。<br>
+                                        <code>&lt;p hidden&gt;这段文字不会显示。&lt;/p&gt;</code></li>
+                                        <li><strong>tabindex</strong> - 指定元素的键盘导航顺序。<br>
+                                        <code>&lt;input tabindex="1"&gt;</code></li>
+                                        <li><strong>contenteditable</strong> - 指定元素的内容是否可编辑。<br>
+                                        <code>&lt;div contenteditable="true"&gt;这段文字可以被用户编辑。&lt;/div&gt;</code></li>
+                                        <li><strong>data-*</strong> - 存储自定义数据，供JavaScript使用。<br>
+                                        <code>&lt;div data-user-id="123" data-role="admin"&gt;用户信息&lt;/div&gt;</code></li>
+                                        <li><strong>aria-*</strong> - 提供无障碍信息，帮助辅助技术理解页面。<br>
+                                        <code>&lt;button aria-label="关闭" aria-expanded="false"&gt;X&lt;/button&gt;</code></li>
+                                        <li><strong>draggable</strong> - 指定元素是否可拖动。<br>
+                                        <code>&lt;div draggable="true"&gt;可拖动元素&lt;/div&gt;</code></li>
+                                        <li><strong>spellcheck</strong> - 指定是否对元素进行拼写检查。<br>
+                                        <code>&lt;textarea spellcheck="true"&gt;&lt;/textarea&gt;</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="specific-attributes" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">特定元素属性</h3>
+                        <div class="space-y-4">
+                            <p>除了全局属性外，许多HTML元素还有特定的属性，用于控制元素的特定行为或特性。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">链接属性 (&lt;a&gt;)</h4>
+                                <div class="space-y-2">
+                                    <p><strong>主要属性</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>href</strong> - 指定链接的URL<br>
+                                        <code>&lt;a href="https://example.com"&gt;Example&lt;/a&gt;</code></li>
+                                        <li><strong>target</strong> - 指定打开链接的位置<br>
+                                        <code>&lt;a href="https://example.com" target="_blank"&gt;在新窗口打开&lt;/a&gt;</code></li>
+                                        <li><strong>download</strong> - 指示浏览器下载URL而不是导航到它<br>
+                                        <code>&lt;a href="file.pdf" download&gt;下载PDF&lt;/a&gt;</code></li>
+                                        <li><strong>rel</strong> - 指定当前文档与链接文档的关系<br>
+                                        <code>&lt;a href="https://example.com" rel="noopener noreferrer"&gt;安全链接&lt;/a&gt;</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">图像属性 (&lt;img&gt;)</h4>
+                                <div class="space-y-2">
+                                    <p><strong>主要属性</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>src</strong> - 指定图像的URL<br>
+                                        <code>&lt;img src="image.jpg"&gt;</code></li>
+                                        <li><strong>alt</strong> - 提供图像的替代文本<br>
+                                        <code>&lt;img src="image.jpg" alt="山水风景"&gt;</code></li>
+                                        <li><strong>width, height</strong> - 指定图像的宽度和高度<br>
+                                        <code>&lt;img src="image.jpg" width="300" height="200"&gt;</code></li>
+                                        <li><strong>loading</strong> - 指定图像的加载行为<br>
+                                        <code>&lt;img src="image.jpg" loading="lazy"&gt;</code></li>
+                                        <li><strong>srcset</strong> - 根据设备提供不同分辨率的图像<br>
+                                        <code>&lt;img src="small.jpg" srcset="medium.jpg 1000w, large.jpg 2000w"&gt;</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">表单元素属性</h4>
+                                <div class="space-y-2">
+                                    <p><strong>表单 (&lt;form&gt;) 属性</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>action</strong> - 指定表单提交的URL<br>
+                                        <code>&lt;form action="/submit"&gt;</code></li>
+                                        <li><strong>method</strong> - 指定HTTP方法（get或post）<br>
+                                        <code>&lt;form method="post"&gt;</code></li>
+                                        <li><strong>enctype</strong> - 指定表单数据的编码方式<br>
+                                        <code>&lt;form enctype="multipart/form-data"&gt;</code></li>
+                                    </ul>
+                                    
+                                    <p><strong>输入 (&lt;input&gt;) 属性</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>type</strong> - 指定输入类型<br>
+                                        <code>&lt;input type="text|password|checkbox|radio|submit|..."&gt;</code></li>
+                                        <li><strong>name</strong> - 指定输入字段的名称<br>
+                                        <code>&lt;input name="username"&gt;</code></li>
+                                        <li><strong>value</strong> - 指定默认值<br>
+                                        <code>&lt;input value="默认文本"&gt;</code></li>
+                                        <li><strong>placeholder</strong> - 提供提示信息<br>
+                                        <code>&lt;input placeholder="请输入用户名"&gt;</code></li>
+                                        <li><strong>required</strong> - 指定必填字段<br>
+                                        <code>&lt;input required&gt;</code></li>
+                                        <li><strong>disabled</strong> - 禁用输入字段<br>
+                                        <code>&lt;input disabled&gt;</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">媒体元素属性</h4>
+                                <div class="space-y-2">
+                                    <p><strong>视频 (&lt;video&gt;) 和音频 (&lt;audio&gt;) 属性</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>controls</strong> - 显示播放控件<br>
+                                        <code>&lt;video controls&gt;</code></li>
+                                        <li><strong>autoplay</strong> - 自动播放媒体<br>
+                                        <code>&lt;video autoplay&gt;</code></li>
+                                        <li><strong>loop</strong> - 循环播放媒体<br>
+                                        <code>&lt;video loop&gt;</code></li>
+                                        <li><strong>muted</strong> - 静音播放<br>
+                                        <code>&lt;video muted&gt;</code></li>
+                                        <li><strong>poster</strong> (仅视频) - 视频加载前显示的图像<br>
+                                        <code>&lt;video poster="thumbnail.jpg"&gt;</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">表格元素属性</h4>
+                                <div class="space-y-2">
+                                    <p><strong>表格相关属性</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>colspan</strong> - 指定单元格横跨的列数<br>
+                                        <code>&lt;td colspan="2"&gt;</code></li>
+                                        <li><strong>rowspan</strong> - 指定单元格纵跨的行数<br>
+                                        <code>&lt;td rowspan="3"&gt;</code></li>
+                                        <li><strong>scope</strong> - 指明表头单元格的关联范围<br>
+                                        <code>&lt;th scope="col|row"&gt;</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="advanced" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">HTML高级应用</h2>
+                    
+                    <article id="semantic-html" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">语义化HTML</h3>
+                        <div class="space-y-4">
+                            <p>语义化HTML是指使用适当的HTML元素来表达内容的含义，而不仅仅是外观。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">语义化标签</h4>
+                                <div class="space-y-2">
+                                    <p><strong>结构性语义标签</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;header&gt; - 页面或区段的页眉
+&lt;nav&gt; - 导航链接区域
+&lt;main&gt; - 文档的主要内容
+&lt;article&gt; - 独立的内容单元
+&lt;section&gt; - 文档中的区段
+&lt;aside&gt; - 侧边内容
+&lt;footer&gt; - 页面或区段的页脚
+&lt;figure&gt; - 自包含内容，如图表、图片等
+&lt;figcaption&gt; - figure的标题</code></pre>
+                                    
+                                    <p><strong>文本语义标签</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;em&gt; - 强调内容
+&lt;strong&gt; - 重要内容
+&lt;mark&gt; - 标记或高亮内容
+&lt;cite&gt; - 引用的作品标题
+&lt;blockquote&gt; - 块级引用
+&lt;q&gt; - 行内引用
+&lt;abbr&gt; - 缩写
+&lt;time&gt; - 日期/时间
+&lt;address&gt; - 联系信息
+&lt;code&gt; - 代码片段
+&lt;pre&gt; - 预格式化文本</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">非语义化 vs 语义化对比</h4>
+                                <div class="space-y-2">
+                                    <p><strong>非语义化写法</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;div class="header"&gt;
+    &lt;div class="logo"&gt;网站名称&lt;/div&gt;
+    &lt;div class="nav"&gt;
+        &lt;div class="nav-item"&gt;&lt;a href="/"&gt;首页&lt;/a&gt;&lt;/div&gt;
+        &lt;div class="nav-item"&gt;&lt;a href="/about"&gt;关于&lt;/a&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="main-content"&gt;
+    &lt;div class="article"&gt;
+        &lt;div class="article-title"&gt;文章标题&lt;/div&gt;
+        &lt;div class="article-content"&gt;文章内容...&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="sidebar"&gt;
+        &lt;div class="sidebar-item"&gt;侧边栏内容&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="footer"&gt;
+    &lt;div class="copyright"&gt;版权信息&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    
+                                    <p><strong>语义化写法</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;header&gt;
+    &lt;h1&gt;网站名称&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="/"&gt;首页&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/about"&gt;关于&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;文章标题&lt;/h2&gt;
+        &lt;p&gt;文章内容...&lt;/p&gt;
+    &lt;/article&gt;
+    
+    &lt;aside&gt;
+        &lt;section&gt;侧边栏内容&lt;/section&gt;
+    &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;版权信息&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">语义化的优势</h4>
+                                <div class="space-y-2">
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>可访问性</strong> - 辅助技术（如屏幕阅读器）可以更好地理解页面结构和内容的含义。</li>
+                                        <li><strong>SEO优化</strong> - 搜索引擎可以更好地理解页面内容，提高排名。</li>
+                                        <li><strong>代码可维护性</strong> - 语义化标记使代码更清晰，易于维护和更新。</li>
+                                        <li><strong>跨设备兼容性</strong> - 语义化HTML有助于确保内容在各种设备上都能正确显示。</li>
+                                        <li><strong>未来兼容性</strong> - 随着Web标准的发展，语义化标记更可能与未来的技术兼容。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="html5-features" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">HTML5新特性</h3>
+                        <div class="space-y-4">
+                            <p>HTML5是HTML的第五个主要版本，引入了许多新元素和API，使Web开发更强大。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">新增元素</h4>
+                                <div class="space-y-2">
+                                    <p><strong>语义化元素</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>&lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;section&gt;, &lt;aside&gt; - 上一节已详细介绍</li>
+                                        <li>&lt;figure&gt; 和 &lt;figcaption&gt; - 用于标记图表、图像等</li>
+                                        <li>&lt;main&gt; - 标记文档的主要内容</li>
+                                        <li>&lt;time&gt; - 标记日期/时间</li>
+                                        <li>&lt;mark&gt; - 高亮文本</li>
+                                        <li>&lt;details&gt; 和 &lt;summary&gt; - 创建可展开/折叠的内容</li>
+                                    </ul>
+                                    
+                                    <p><strong>表单元素</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>新的input类型：email, url, number, range, date, color, search等</li>
+                                        <li>&lt;datalist&gt; - 为输入框提供预定义选项列表</li>
+                                        <li>&lt;output&gt; - 表示计算结果</li>
+                                        <li>&lt;progress&gt; - 表示任务的完成进度</li>
+                                        <li>&lt;meter&gt; - 表示已知范围内的标量值</li>
+                                    </ul>
+                                    
+                                    <p><strong>多媒体元素</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>&lt;audio&gt; - 嵌入音频</li>
+                                        <li>&lt;video&gt; - 嵌入视频</li>
+                                        <li>&lt;source&gt; - 为媒体元素指定多种媒体资源</li>
+                                        <li>&lt;track&gt; - 为媒体元素指定文本轨道（如字幕）</li>
+                                        <li>&lt;canvas&gt; - 通过脚本绘制图形</li>
+                                        <li>&lt;svg&gt; - 嵌入可缩放矢量图形</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">新API</h4>
+                                <div class="space-y-2">
+                                    <p><strong>主要API</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>Geolocation API</strong> - 获取用户地理位置</li>
+                                        <li><strong>Drag and Drop API</strong> - 拖放功能</li>
+                                        <li><strong>Web Storage API</strong> - localStorage 和 sessionStorage</li>
+                                        <li><strong>Web Workers API</strong> - 后台JavaScript线程</li>
+                                        <li><strong>WebSocket API</strong> - 全双工通信</li>
+                                        <li><strong>Canvas API</strong> - 2D图形绘制</li>
+                                        <li><strong>Audio and Video API</strong> - 控制媒体播放</li>
+                                        <li><strong>History API</strong> - 操作浏览历史</li>
+                                        <li><strong>Web Notifications API</strong> - 浏览器通知</li>
+                                    </ul>
+                                    
+                                    <p><strong>Web Storage示例</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>// 存储数据
+localStorage.setItem("username", "张三");
+
+// 获取数据
+let username = localStorage.getItem("username");
+
+// 删除数据
+localStorage.removeItem("username");</code></pre>
+                                    
+                                    <p><strong>Geolocation示例</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        position => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            console.log(`纬度: ${latitude}, 经度: ${longitude}`);
+        },
+        error => {
+            console.error("获取位置失败:", error.message);
+        }
+    );
+} else {
+    console.error("浏览器不支持地理定位");
+}</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">其他重要特性</h4>
+                                <div class="space-y-2">
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>表单验证</strong> - 通过required、pattern等属性进行客户端验证</li>
+                                        <li><strong>网页Worker</strong> - 允许Web应用程序在后台线程中运行脚本</li>
+                                        <li><strong>离线Web应用程序</strong> - 通过Application Cache可以创建离线应用（已被Service Workers替代）</li>
+                                        <li><strong>响应式图像</strong> - 使用srcset和sizes属性实现</li>
+                                        <li><strong>Web组件</strong> - 创建可重用的组件</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">应用示例：Canvas绘图</h4>
+                                <div class="space-y-2">
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;canvas id="myCanvas" width="200" height="100" style="border:1px solid #000;"&gt;
+    您的浏览器不支持Canvas元素。
+&lt;/canvas&gt;
+
+&lt;script&gt;
+    // 获取Canvas元素
+    const canvas = document.getElementById("myCanvas");
+    
+    // 获取绘图上下文
+    const ctx = canvas.getContext("2d");
+    
+    // 设置填充颜色
+    ctx.fillStyle = "#FF0000";
+    
+    // 绘制矩形
+    ctx.fillRect(10, 10, 150, 80);
+&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="accessibility" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">无障碍性</h3>
+                        <div class="space-y-4">
+                            <p>Web无障碍性指确保所有人，包括残障人士，都能访问和使用网站。HTML提供了多种实现无障碍性的机制。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">无障碍性基础</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用正确的HTML元素和属性来提高无障碍性。</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>语义化标记</strong> - 使用适当的HTML元素表达内容的含义</li>
+                                        <li><strong>替代文本</strong> - 为图像和多媒体提供文本替代</li>
+                                        <li><strong>表单标签</strong> - 为表单元素提供清晰的标签</li>
+                                        <li><strong>ARIA角色和属性</strong> - 补充HTML的语义信息</li>
+                                        <li><strong>键盘导航</strong> - 确保所有功能可通过键盘访问</li>
+                                    </ul>
+                                    <p><strong>原理解释</strong>：无障碍性技术帮助残障用户使用辅助技术（如屏幕阅读器、放大镜或语音识别软件）访问网页内容。</p>
+                                    <p><strong>应用场景</strong>：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>政府网站和公共服务</li>
+                                        <li>教育资源和学习平台</li>
+                                        <li>电子商务网站</li>
+                                        <li>新闻和信息网站</li>
+                                        <li>任何面向广泛用户的网站</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">关键HTML无障碍技术</h4>
+                                <div class="space-y-2">
+                                    <p><strong>图像替代文本</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;img src="logo.png" alt="公司徽标"&gt;</code></pre>
+                                    
+                                    <p><strong>表单标签关联</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;label for="username"&gt;用户名：&lt;/label&gt;
+&lt;input id="username" type="text" name="username"&gt;</code></pre>
+                                    
+                                    <p><strong>标题层次结构</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;h1&gt;网站主标题&lt;/h1&gt;
+&lt;section&gt;
+    &lt;h2&gt;部分标题&lt;/h2&gt;
+    &lt;p&gt;内容...&lt;/p&gt;
+    &lt;h3&gt;子部分标题&lt;/h3&gt;
+    &lt;p&gt;更多内容...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+                                    
+                                    <p><strong>链接文本</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>/* 不好的做法 */
+&lt;a href="page.html"&gt;点击这里&lt;/a&gt;
+
+/* 好的做法 */
+&lt;a href="page.html"&gt;查看产品详情&lt;/a&gt;</code></pre>
+                                    
+                                    <p><strong>表格标题和关联</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;table&gt;
+    &lt;caption&gt;员工信息&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th scope="col"&gt;姓名&lt;/th&gt;
+        &lt;th scope="col"&gt;部门&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th scope="row"&gt;张三&lt;/th&gt;
+        &lt;td&gt;销售部&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">ARIA（无障碍富互联网应用）</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：ARIA提供了一组额外的HTML属性，用于增强网页的无障碍性。</p>
+                                    
+                                    <p><strong>ARIA角色</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;div role="navigation"&gt;
+    &lt;!-- 导航内容 --&gt;
+&lt;/div&gt;
+
+&lt;div role="search"&gt;
+    &lt;!-- 搜索表单 --&gt;
+&lt;/div&gt;
+
+&lt;button role="tab"&gt;选项卡&lt;/button&gt;</code></pre>
+                                    
+                                    <p><strong>ARIA状态和属性</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;!-- 描述元素当前状态 --&gt;
+&lt;button aria-expanded="false"&gt;展开菜单&lt;/button&gt;
+
+&lt;!-- 提供额外标签 --&gt;
+&lt;button aria-label="关闭"&gt;X&lt;/button&gt;
+
+&lt;!-- 错误提示 --&gt;
+&lt;input aria-invalid="true" aria-describedby="error-msg"&gt;
+&lt;div id="error-msg"&gt;请输入有效的邮箱地址&lt;/div&gt;</code></pre>
+                                    
+                                    <p><strong>原理解释</strong>：ARIA不会改变元素的行为或外观，但会提供额外的语义信息，帮助辅助技术理解页面结构和元素的用途。</p>
+                                    <p><strong>注意事项</strong>：尽可能使用HTML语义化元素，只在需要时才使用ARIA。不恰当地使用ARIA可能会造成更多问题。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">键盘导航</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：确保所有交互元素可以通过键盘访问。</p>
+                                    
+                                    <p><strong>Tab顺序</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;a href="#" tabindex="1"&gt;第一个项目&lt;/a&gt;
+&lt;a href="#" tabindex="2"&gt;第二个项目&lt;/a&gt;
+&lt;a href="#" tabindex="0"&gt;按照默认顺序&lt;/a&gt;
+&lt;a href="#" tabindex="-1"&gt;从Tab顺序中移除&lt;/a&gt;</code></pre>
+                                    
+                                    <p><strong>键盘事件</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;button onkeydown="handleKeyDown(event)"&gt;按钮&lt;/button&gt;
+
+&lt;script&gt;
+function handleKeyDown(event) {
+    // 检查是否按下了Enter或空格键
+    if (event.key === 'Enter' || event.key === ' ') {
+        // 执行操作
+        console.log('按钮被激活');
+    }
+}
+&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">无障碍性检查清单</h4>
+                                <div class="space-y-2">
+                                    <ul class="list-disc pl-5">
+                                        <li>使用语义化HTML标签</li>
+                                        <li>为所有图像提供alt属性</li>
+                                        <li>确保颜色对比度足够</li>
+                                        <li>为表单控件提供标签</li>
+                                        <li>创建有意义的链接文本</li>
+                                        <li>设置正确的语言属性</li>
+                                        <li>允许调整文本大小</li>
+                                        <li>确保所有功能可通过键盘访问</li>
+                                        <li>提供跳过导航的链接</li>
+                                        <li>使用ARIA补充HTML的语义</li>
+                                        <li>测试网站的无障碍性（使用屏幕阅读器等辅助技术）</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="seo-basics" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">SEO基础</h3>
+                        <div class="space-y-4">
+                            <p>搜索引擎优化（SEO）是提高网站在搜索引擎中排名的过程。正确的HTML结构可以显著提升SEO效果。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">SEO友好的HTML元素</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用特定的HTML元素和属性来提升搜索引擎排名。</p>
+                                    
+                                    <p><strong>标题标签</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;title&gt;产品名称 - 关键词 | 网站名称&lt;/title&gt;</code></pre>
+                                    <p>title标签是SEO中最重要的元素之一，应包含主要关键词，通常是页面首要内容的概述。</p>
+                                    
+                                    <p><strong>Meta描述</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;meta name="description" content="这是一个简短的页面描述，包含关键词和吸引用户点击的信息。"&gt;</code></pre>
+                                    <p>虽然meta描述不直接影响排名，但可以影响点击率，间接提升SEO效果。</p>
+                                    
+                                    <p><strong>标题层次（h1-h6）</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;h1&gt;主要标题（每页只使用一次）&lt;/h1&gt;
+&lt;h2&gt;二级标题&lt;/h2&gt;
+&lt;h3&gt;三级标题&lt;/h3&gt;</code></pre>
+                                    <p>搜索引擎使用标题标签来理解页面结构和主题。h1标签尤为重要，应包含主要关键词。</p>
+                                    
+                                    <p><strong>语义化元素</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;article&gt;, &lt;section&gt;, &lt;nav&gt;, &lt;header&gt;, &lt;footer&gt;</code></pre>
+                                    <p>语义化元素帮助搜索引擎理解页面结构和内容关系。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">链接优化</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：优化链接文本和结构。</p>
+                                    
+                                    <p><strong>描述性链接文本</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>/* 不利于SEO */
+&lt;a href="product.html"&gt;点击这里&lt;/a&gt;
+
+/* 有利于SEO */
+&lt;a href="product.html"&gt;高性能笔记本电脑&lt;/a&gt;</code></pre>
+                                    
+                                    <p><strong>内部链接</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;a href="/related-article.html"&gt;相关文章标题&lt;/a&gt;</code></pre>
+                                    <p>内部链接帮助搜索引擎理解网站结构和页面之间的关系。</p>
+                                    
+                                    <p><strong>外部链接</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;a href="https://example.com" rel="nofollow"&gt;外部网站&lt;/a&gt;</code></pre>
+                                    <p>对于不信任的外部链接，使用rel="nofollow"告诉搜索引擎不要传递页面权重。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">图像优化</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：优化图像以提高SEO效果。</p>
+                                    
+                                    <p><strong>Alt文本</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;img src="product.jpg" alt="高性能笔记本电脑 - 型号XYZ"&gt;</code></pre>
+                                    <p>alt文本不仅对accessibility有帮助，也让搜索引擎理解图像内容。</p>
+                                    
+                                    <p><strong>图像文件名</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>/* 不利于SEO */
+&lt;img src="IMG001234.jpg" alt="笔记本电脑"&gt;
+
+/* 有利于SEO */
+&lt;img src="high-performance-laptop-model-xyz.jpg" alt="高性能笔记本电脑 - 型号XYZ"&gt;</code></pre>
+                                    <p>使用描述性的文件名可以为SEO提供额外的上下文。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">移动友好性</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：确保网站对移动设备友好。</p>
+                                    
+                                    <p><strong>视口设置</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+                                    <p>这个meta标签告诉浏览器如何在移动设备上调整页面大小，对移动SEO至关重要。</p>
+                                    
+                                    <p><strong>响应式设计</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;picture&gt;
+    &lt;source media="(max-width: 600px)" srcset="small-image.jpg"&gt;
+    &lt;source media="(max-width: 1200px)" srcset="medium-image.jpg"&gt;
+    &lt;img src="large-image.jpg" alt="响应式图像"&gt;
+&lt;/picture&gt;</code></pre>
+                                    <p>响应式图像和设计有助于改善移动用户体验，这对SEO越来越重要。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">结构化数据</h4>
+                                <div class="space-y-2">
+                                    <p><strong>基础语法</strong>：使用结构化数据标记帮助搜索引擎理解页面内容。</p>
+                                    
+                                    <p><strong>JSON-LD格式</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;script type="application/ld+json"&gt;
+{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "高性能笔记本电脑XYZ",
+    "description": "这是一款高性能商务笔记本电脑...",
+    "brand": {
+        "@type": "Brand",
+        "name": "品牌名称"
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": "5999.00",
+        "priceCurrency": "CNY",
+        "availability": "https://schema.org/InStock"
+    }
+}
+&lt;/script&gt;</code></pre>
+                                    <p>结构化数据可以生成富媒体搜索结果（如评分、价格等），提高点击率。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">SEO最佳实践</h4>
+                                <div class="space-y-2">
+                                    <ul class="list-disc pl-5">
+                                        <li>确保每页有唯一的title和meta description</li>
+                                        <li>使用语义化HTML结构</li>
+                                        <li>保持清晰的URL结构</li>
+                                        <li>优化页面加载速度（压缩资源、减少HTTP请求）</li>
+                                        <li>使用描述性的链接文本</li>
+                                        <li>优化图像（alt文本、压缩）</li>
+                                        <li>创建XML网站地图</li>
+                                        <li>确保移动友好</li>
+                                        <li>使用HTTPS（安全协议）</li>
+                                        <li>添加结构化数据标记</li>
+                                        <li>定期更新内容</li>
+                                        <li>确保网站可访问性（对搜索引擎越来越重要）</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                
+                <section id="common-questions" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">常见问题</h2>
+                    
+                    <article id="common-mistakes" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">常见错误</h3>
+                        <div class="space-y-4">
+                            <p>以下是HTML初学者常见的错误，了解这些可以帮助你避免同样的问题。</p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">1. 标签未正确关闭</h4>
+                                <div class="space-y-2">
+                                    <p><strong>错误的写法</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;div&gt;
+    &lt;p&gt;这是一个段落。
+&lt;/div&gt;</code></pre>
+                                    <p><strong>正确的写法</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;div&gt;
+    &lt;p&gt;这是一个段落。&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                                    <p><strong>解释</strong>：未闭合的标签会导致页面结构混乱，显示异常。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">2. 标签嵌套错误</h4>
+                                <div class="space-y-2">
+                                    <p><strong>错误的写法</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;strong&gt;&lt;em&gt;强调文本&lt;/strong&gt;&lt;/em&gt;</code></pre>
+                                    <p><strong>正确的写法</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;strong&gt;&lt;em&gt;强调文本&lt;/em&gt;&lt;/strong&gt;</code></pre>
+                                    <p><strong>解释</strong>：标签必须正确嵌套，后打开的标签应该先关闭。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-md">
+                                <h4 class="font-medium mb-2">3. 特殊字符未转义</h4>
+                                <div class="space-y-2">
+                                    <p><strong>错误的写法</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;p&gt;5 < 10 是真的，& 5 > 2 也是真的。&lt;/p&gt;</code></pre>
+                                    <p><strong>正确的写法</strong>：</p>
+                                    <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;p&gt;5 &lt; 10 是真的，&amp; 5 &gt; 2 也是真的。&lt;/p&gt;</code></pre>
+                                    <p><strong>解释</strong>：HTML中某些字符（如 <, >, &）有特殊含义，需要使用字符实体（<strong>转义</strong>）来显示。常见的字符实体包括：</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>&lt; - &amp;lt;</li>
+                                <li>&gt; - &amp;gt;</li>
+                                <li>&amp; - &amp;amp;</li>
+                                <li>" - &amp;quot;</li>
+                                <li>' - &amp;apos;</li>
+                                <li>空格 - &amp;nbsp;</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">4. 属性引号缺失</h4>
+                        <div class="space-y-2">
+                            <p><strong>错误的写法</strong>：</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;a href=https://example.com&gt;链接&lt;/a&gt;</code></pre>
+                            <p><strong>正确的写法</strong>：</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;a href="https://example.com"&gt;链接&lt;/a&gt;</code></pre>
+                            <p><strong>解释</strong>：虽然在某些情况下HTML允许省略引号，但始终使用引号是一种良好的做法，特别是当属性值包含空格时。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">5. 使用过时的标签或属性</h4>
+                        <div class="space-y-2">
+                            <p><strong>错误的写法</strong>：</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;font color="red"&gt;红色文本&lt;/font&gt;
+&lt;center&gt;居中文本&lt;/center&gt;</code></pre>
+                            <p><strong>正确的写法</strong>：</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;p style="color: red;"&gt;红色文本&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;居中文本&lt;/p&gt;</code></pre>
+                            <p><strong>解释</strong>：某些HTML标签和属性已经废弃，应该使用CSS来控制样式。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">6. 图像缺少alt属性</h4>
+                        <div class="space-y-2">
+                            <p><strong>错误的写法</strong>：</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;img src="image.jpg"&gt;</code></pre>
+                            <p><strong>正确的写法</strong>：</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;img src="image.jpg" alt="图像描述"&gt;</code></pre>
+                            <p><strong>解释</strong>：alt属性对于无障碍性和SEO都很重要，应始终包含。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">7. HTML和CSS/JavaScript混合</h4>
+                        <div class="space-y-2">
+                            <p><strong>不推荐的写法</strong>：</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;p style="color: blue; font-size: 14px;"&gt;
+    这是一个段落 &lt;span onclick="alert('点击了!')"&gt;点击我&lt;/span&gt;
+&lt;/p&gt;</code></pre>
+                            <p><strong>推荐的写法</strong>：</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>&lt;!-- HTML --&gt;
+&lt;p class="paragraph"&gt;
+    这是一个段落 &lt;span id="clickable"&gt;点击我&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;!-- CSS（放在单独的文件或style标签中） --&gt;
+&lt;style&gt;
+.paragraph {
+    color: blue;
+    font-size: 14px;
+}
+&lt;/style&gt;
+
+&lt;!-- JavaScript（放在单独的文件或script标签中） --&gt;
+&lt;script&gt;
+document.getElementById('clickable').addEventListener('click', function() {
+    alert('点击了!');
+});
+&lt;/script&gt;</code></pre>
+                            <p><strong>解释</strong>：分离HTML、CSS和JavaScript可以提高代码的可维护性和可读性。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">8. 表单元素缺少标签</h4>
+                        <div class="space-y-2">
+                            <p><strong>错误的写法</strong>：</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>用户名: &lt;input type="text" name="username"&gt;</code></pre>
+                            <p><strong>正确的写法</strong>：</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;label for="username"&gt;用户名:&lt;/label&gt;
+&lt;input type="text" name="username" id="username"&gt;</code></pre>
+                            <p><strong>解释</strong>：为表单元素提供标签有助于提高可用性和无障碍性。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">9. DOCTYPE缺失</h4>
+                        <div class="space-y-2">
+                            <p><strong>错误的写法</strong>：</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;我的网页&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;欢迎&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                            <p><strong>正确的写法</strong>：</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;我的网页&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;欢迎&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                            <p><strong>解释</strong>：DOCTYPE声明告诉浏览器使用哪种HTML版本渲染页面，缺少它可能导致浏览器进入"怪异模式"。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">10. 使用表格进行页面布局</h4>
+                        <div class="space-y-2">
+                            <p><strong>不推荐的做法</strong>：使用表格（&lt;table&gt;）进行页面布局。</p>
+                            <p><strong>推荐的做法</strong>：使用CSS技术进行布局，如Flexbox或Grid。</p>
+                            <p><strong>解释</strong>：表格应该只用于展示表格数据，而不是控制页面布局。使用CSS进行布局提供更好的响应式设计和无障碍性。</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="best-practices" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="text-xl font-semibold mb-4">最佳实践</h3>
+                <div class="space-y-4">
+                    <p>以下是一些HTML编码的最佳实践，可以帮助你编写更好的代码。</p>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">1. 使用正确的文档类型</h4>
+                        <div class="space-y-2">
+                            <p>始终在HTML文档的开头包含正确的DOCTYPE声明，以确保浏览器以标准模式渲染页面。</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>&lt;!DOCTYPE html&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">2. 使用语义化标签</h4>
+                        <div class="space-y-2">
+                            <p>选择能够准确描述内容的HTML标签，而不是仅基于样式需求。</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>/* 不推荐 */
+&lt;div class="article"&gt;
+    &lt;div class="heading"&gt;文章标题&lt;/div&gt;
+    &lt;div&gt;这是文章内容...&lt;/div&gt;
+&lt;/div&gt;
+
+/* 推荐 */
+&lt;article&gt;
+    &lt;h2&gt;文章标题&lt;/h2&gt;
+    &lt;p&gt;这是文章内容...&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">3. 分离内容、表现和行为</h4>
+                        <div class="space-y-2">
+                            <p>保持HTML（内容）、CSS（表现）和JavaScript（行为）的分离。</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>/* HTML文件中 */
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 内容在这里 --&gt;
+    
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">4. 优化图像</h4>
+                        <div class="space-y-2">
+                            <p>始终为图像提供alt属性，并考虑使用响应式图像技术。</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>/* 基本图像 */
+&lt;img src="image.jpg" alt="描述性文本"&gt;
+
+/* 响应式图像 */
+&lt;picture&gt;
+    &lt;source media="(max-width: 600px)" srcset="small.jpg"&gt;
+    &lt;source media="(max-width: 1200px)" srcset="medium.jpg"&gt;
+    &lt;img src="large.jpg" alt="描述性文本"&gt;
+&lt;/picture&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">5. 确保代码可访问性</h4>
+                        <div class="space-y-2">
+                            <p>编写包容性代码，确保所有用户都能访问您的内容。</p>
+                            <ul class="list-disc pl-5">
+                                <li>为表单元素提供标签</li>
+                                <li>为多媒体提供替代内容</li>
+                                <li>确保足够的颜色对比度</li>
+                                <li>使用ARIA属性补充HTML语义</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">6. 保持一致的缩进和格式</h4>
+                        <div class="space-y-2">
+                            <p>使用一致的缩进和代码格式，以提高可读性。</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded overflow-x-auto"><code>/* 一致的格式示例 */
+&lt;div class="container"&gt;
+    &lt;header&gt;
+        &lt;h1&gt;网站标题&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/"&gt;首页&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/about"&gt;关于&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;文章标题&lt;/h2&gt;
+            &lt;p&gt;文章内容...&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">7. 使用小写标签和属性名</h4>
+                        <div class="space-y-2">
+                            <p>虽然HTML不区分大小写，但使用小写是最佳实践。</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>/* 推荐 */
+&lt;a href="https://example.com"&gt;链接&lt;/a&gt;
+
+/* 不推荐 */
+&lt;A HREF="https://example.com"&gt;链接&lt;/A&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">8. 引号使用一致性</h4>
+                        <div class="space-y-2">
+                            <p>在属性值上使用一致的引号风格（单引号或双引号）。</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>/* 一致使用双引号 */
+&lt;a href="https://example.com" title="访问example"&gt;链接&lt;/a&gt;
+
+/* 或者一致使用单引号 */
+&lt;a href='https://example.com' title='访问example'&gt;链接&lt;/a&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">9. 避免不必要的元素</h4>
+                        <div class="space-y-2">
+                            <p>保持代码简洁，避免不必要的包装元素。</p>
+                            <pre class="bg-gray-800 text-white p-3 rounded"><code>/* 不推荐 */
+&lt;div class="container"&gt;
+    &lt;span&gt;文本&lt;/span&gt;
+&lt;/div&gt;
+
+/* 如果不需要额外的容器，可以简化为 */
+&lt;div class="container"&gt;
+    文本
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">10. 验证您的代码</h4>
+                        <div class="space-y-2">
+                            <p>使用W3C验证器等工具定期验证您的HTML代码，确保它符合标准。</p>
+                            <p>在线验证工具：<a href="https://validator.w3.org/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">W3C Markup Validation Service</a></p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="resources" class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="text-xl font-semibold mb-4">学习资源</h3>
+                <div class="space-y-4">
+                    <p>以下是一些帮助你进一步学习和提高HTML技能的资源。</p>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">官方文档</h4>
+                        <div class="space-y-2">
+                            <ul class="list-disc pl-5">
+                                <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML" target="_blank" rel="noopener" class="text-blue-600 hover:underline">MDN Web 文档 - HTML</a> - Mozilla的全面HTML文档，包含详细解释和示例</li>
+                                <li><a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">HTML Living Standard</a> - HTML的官方规范</li>
+                                <li><a href="https://www.w3.org/TR/html/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">W3C HTML规范</a> - W3C的HTML规范</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">教程网站</h4>
+                        <div class="space-y-2">
+                            <ul class="list-disc pl-5">
+                                <li><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">W3Schools HTML教程</a> - 一个简单易懂的HTML入门教程</li>
+                                <li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/HTML" target="_blank" rel="noopener" class="text-blue-600 hover:underline">MDN - HTML学习区域</a> - 面向初学者的结构化HTML学习路径</li>
+                                <li><a href="https://www.codecademy.com/learn/learn-html" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Codecademy HTML课程</a> - 交互式HTML学习平台</li>
+                                <li><a href="https://www.freecodecamp.org/learn/responsive-web-design/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">freeCodeCamp</a> - 免费的Web开发课程，包含HTML部分</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">在线工具</h4>
+                        <div class="space-y-2">
+                            <ul class="list-disc pl-5">
+                                <li><a href="https://validator.w3.org/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">W3C标记验证服务</a> - 检查HTML代码的有效性</li>
+                                <li><a href="https://jsfiddle.net/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">JSFiddle</a> - 在线代码编辑器，可用于测试HTML、CSS和JavaScript</li>
+                                <li><a href="https://codepen.io/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">CodePen</a> - 在线前端代码编辑器和社区</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">书籍</h4>
+                        <div class="space-y-2">
+                            <ul class="list-disc pl-5">
+                                <li>《HTML和CSS：设计与构建网站》- Jon Duckett</li>
+                                <li>《HTML5权威指南》- Adam Freeman</li>
+                                <li>《响应式Web设计：HTML5和CSS3实战》- Ben Frain</li>
+                                <li>《Head First HTML与CSS》- Elisabeth Robson和Eric Freeman</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">社区和论坛</h4>
+                        <div class="space-y-2">
+                            <ul class="list-disc pl-5">
+                                <li><a href="https://stackoverflow.com/questions/tagged/html" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Stack Overflow的HTML标签</a> - 提问和回答HTML问题</li>
+                                <li><a href="https://www.reddit.com/r/html/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Reddit HTML社区</a> - 讨论HTML相关话题</li>
+                                <li><a href="https://github.com" target="_blank" rel="noopener" class="text-blue-600 hover:underline">GitHub</a> - 探索HTML项目和代码示例</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md">
+                        <h4 class="font-medium mb-2">后续学习路径</h4>
+                        <div class="space-y-2">
+                            <ul class="list-disc pl-5">
+                                <li>CSS - 学习如何为HTML添加样式</li>
+                                <li>JavaScript - 学习如何为网页添加交互功能</li>
+                                <li>响应式设计 - 学习如何创建适应不同屏幕大小的网站</li>
+                                <li>Web无障碍性 - 深入学习如何创建人人可用的网站</li>
+                                <li>现代前端框架（React、Vue、Angular等）- 学习使用当前流行的框架构建复杂Web应用</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+        </div> <!-- 关闭 content-wrapper -->
+    </div> <!-- 关闭 main-container -->
+    
+    <footer class="py-6 bg-white border-t border-gray-200 mt-8">
+        <div class="container mx-auto px-4 text-center text-gray-600">
+            <p class="text-sm">
+                © 版权所有 <a href="https://weibo.com/u/1890694651" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline">[四水]</a> 2025
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener("wheel", (e)=> {
+          const isPinching = e.ctrlKey
+          if(isPinching) e.preventDefault()
+        }, { passive: false })
+    </script>
+
+    <!-- 可移动悬浮按钮组 -->
+    <div class="floating-button-container" id="floatingBtnContainer">
+        <!-- 主按钮 -->
+        <div class="floating-button" id="floatingBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+        </div>
+        
+        <!-- 展开的菜单 -->
+        <div class="floating-menu" id="floatingMenu">
+            <!-- 到顶部按钮 -->
+            <div class="menu-item" id="toTopBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+                <span>到顶部</span>
+            </div>
+            
+            <!-- 上一节按钮 -->
+            <div class="menu-item" id="prevSectionBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <span>上一节</span>
+            </div>
+            
+            <!-- 下一节按钮 -->
+            <div class="menu-item" id="nextSectionBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>下一节</span>
+            </div>
+            
+            <!-- 到底部按钮 -->
+            <div class="menu-item" id="toBottomBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+                <span>到底部</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
